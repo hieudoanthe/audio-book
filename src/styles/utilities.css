@@ -1,0 +1,76 @@
+/* Thin scrollbar utility */
+.thin-scrollbar {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #5b5f6a transparent;
+}
+
+/* WebKit-based browsers */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #5b5f6a;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #7b7f8a;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+/* Custom scrollbar for AudioList - hidden by default, show on hover */
+.audio-list-scrollbar {
+  /* Firefox - always reserve space, but scrollbar invisible by default */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.audio-list-scrollbar:hover {
+  /* Firefox - show scrollbar on hover */
+  scrollbar-color: rgba(57, 57, 68, 0.8) transparent;
+}
+
+/* WebKit-based browsers - always reserve space, overlay scrollbar */
+.audio-list-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background: transparent;
+}
+
+/* Track always visible but very transparent */
+.audio-list-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.audio-list-scrollbar:hover::-webkit-scrollbar-track {
+  background: rgba(57, 57, 68, 0.6);
+}
+
+.audio-list-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(57, 57, 68, 0.8);
+  border-radius: 0;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.audio-list-scrollbar:hover::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+
+.audio-list-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(57, 57, 68, 1);
+}

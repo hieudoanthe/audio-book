@@ -49,7 +49,7 @@ export default function Sidebar({ isOpen = false, onClose }: SidebarProps) {
       )}
       <aside
         className={`
-          fixed lg:static inset-y-0 left-0 z-50 w-64
+          fixed lg:static inset-y-0 left-0 z-60 lg:z-50 w-64
           flex flex-col gap-2 border-r bg-[#1e2128] text-[#abafbb] min-h-screen p-4
           transform transition-transform duration-300 ease-in-out
           ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
@@ -96,9 +96,6 @@ export default function Sidebar({ isOpen = false, onClose }: SidebarProps) {
             />
           ))}
         </nav>
-        <button className="mt-25 rounded bg-orange-500 px-3 py-2 font-semibold text-white">
-          Cài đặt App
-        </button>
       </aside>
     </>
   );

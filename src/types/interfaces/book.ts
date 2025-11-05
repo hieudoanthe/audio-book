@@ -45,6 +45,7 @@ export interface Chapter {
   number: string;
   title: string;
   duration: string; // e.g., "3:09", "18:22"
+  audioUrl?: string; // URL to audio file
 }
 
 export interface BookDetail extends Book {

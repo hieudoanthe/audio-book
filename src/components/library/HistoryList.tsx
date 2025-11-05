@@ -89,8 +89,8 @@ export default function HistoryList() {
               <p className="text-white text-sm font-semibold line-clamp-2 group-hover:text-orange-500 transition-colors">
                 {item.bookTitle}
               </p>
-              <div className="flex items-center gap-4 mt-1">
-                <div className="flex items-center gap-1 text-[#abafbb] text-xs">
+              <div className="flex items-center gap-4 mt-1 flex-wrap">
+                <div className="flex items-center gap-1 text-[#abafbb] text-xs shrink-0">
                   <svg
                     width="14"
                     height="14"
@@ -104,10 +104,10 @@ export default function HistoryList() {
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
                   </svg>
-                  <span>{item.author}</span>
+                  <span className="whitespace-nowrap">{item.author}</span>
                 </div>
                 {item.duration && (
-                  <div className="flex items-center gap-1 text-[#abafbb] text-xs">
+                  <div className="flex items-center gap-1 text-[#abafbb] text-xs shrink-0">
                     <svg
                       width="14"
                       height="14"
@@ -121,7 +121,7 @@ export default function HistoryList() {
                       <circle cx="12" cy="12" r="10"></circle>
                       <polyline points="12 6 12 12 16 14"></polyline>
                     </svg>
-                    <span>{item.duration}</span>
+                    <span className="whitespace-nowrap">{item.duration}</span>
                   </div>
                 )}
               </div>
@@ -153,4 +153,3 @@ export default function HistoryList() {
     </div>
   );
 }
-

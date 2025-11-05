@@ -1,5 +1,13 @@
 import type { Book, BookWithDescription, BookDetail, Chapter } from "./book";
 
+export interface ProductActionButtonsProps {
+  book?: BookDetail;
+}
+
+export interface BottomActionButtonsProps {
+  book?: BookDetail;
+}
+
 export interface CategoryContentGridProps {
   title: string;
   items: Book[];

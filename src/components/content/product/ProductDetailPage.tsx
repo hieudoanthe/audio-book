@@ -16,7 +16,7 @@ export default function ProductDetailPage({
   categoryTitle,
 }: ProductDetailPageProps) {
   return (
-    <div className="space-y-6 pb-12">
+    <div className="space-y-6 pb-12 sm:pb-20">
       <ProductBreadcrumb
         categoryTitle={categoryTitle}
         productTitle={book.title}
@@ -69,7 +69,7 @@ export default function ProductDetailPage({
         </div>
       </div>
 
-      <BottomActionButtons />
+      <BottomActionButtons book={book} />
     </div>
   );
 }

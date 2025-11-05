@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { AppShell, Footer } from "../components/layout";
 import { AudioPlayerProvider } from "../contexts/AudioPlayerContext";
+import { CartProvider } from "../contexts/CartContext";
 
 export const metadata: Metadata = {
   title: "Sách nói & Podcast",
@@ -17,10 +18,12 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <AudioPlayerProvider>
-          <AppShell>
-            {children}
-            <Footer />
-          </AppShell>
+          <CartProvider>
+            <AppShell>
+              {children}
+              <Footer />
+            </AppShell>
+          </CartProvider>
         </AudioPlayerProvider>
       </body>
     </html>

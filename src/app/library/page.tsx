@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import LibraryTabs from "@/components/library/LibraryTabs";
 import FavoriteList from "@/components/library/FavoriteList";
@@ -7,7 +7,7 @@ import HistoryList from "@/components/library/HistoryList";
 import PurchasedList from "@/components/library/PurchasedList";
 import BookmarkList from "@/components/library/BookmarkList";
 
-export default function LibraryPage() {
+function LibraryContent() {
   const searchParams = useSearchParams();
   const tabParam = searchParams.get("tab");
   const [activeTab, setActiveTab] = useState(tabParam || "thich");
@@ -27,5 +27,13 @@ export default function LibraryPage() {
       {activeTab === "da-mua" && <PurchasedList />}
       {activeTab === "danh-dau" && <BookmarkList />}
     </div>
+  );
+}
+
+export default function LibraryPage() {
+  return (
+    <Suspense fallback={<div className="space-y-6 pb-12">Loading...</div>}>
+      <LibraryContent />
+    </Suspense>
   );
 }
